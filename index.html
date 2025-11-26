@@ -4,111 +4,166 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Airport Management System</title>
+    <title>Skyline — Modern Landing</title>
     <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Airport Management System</h1>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#">Skyline</a>
+
+            <nav class="nav" id="nav">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <button id="themeToggle" class="btn ghost">Dark</button>
+            </nav>
+
+            <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="controls">
-            <div class="left">
-                <input id="searchInput" type="search" placeholder="Search flight number or destination" />
-                <select id="statusFilter">
-                    <option value="all">All statuses</option>
-                    <option value="scheduled">Scheduled</option>
-                    <option value="boarding">Boarding</option>
-                    <option value="departed">Departed</option>
-                    <option value="cancelled">Cancelled</option>
-                </select>
-            </div>
-
-            <div class="right">
-                <button id="openAddForm">Add Flight</button>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Design that feels effortless</h1>
+                    <p class="lead">Beautiful UI patterns, fast performance, and components you can reuse. Launch faster
+                        with a modern, responsive foundation.</p>
+                    <div class="hero-cta">
+                        <a class="btn primary" href="#pricing">Get started</a>
+                        <a class="btn ghost" href="#features">Learn more</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-mock">
+                        <div class="mock-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="mock-body">
+                            <h3>Dashboard</h3>
+                            <p>Realtime stats, quick actions, and clean charts to keep you in control.</p>
+                            <div class="mock-stats">
+                                <div><strong>1.2K</strong><span>Users</span></div>
+                                <div><strong>98%</strong><span>Uptime</span></div>
+                                <div><strong>24</strong><span>Tasks</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="flightsSection">
-            <table id="flightsTable">
-                <thead>
-                    <tr>
-                        <th>Flight</th>
-                        <th>Airline</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Departure</th>
-                        <th>Gate</th>
-                        <th>Status</th>
-                        <th>Passengers</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title">Features</h2>
+                <div class="features-grid">
+                    <article class="feature">
+                        <div class="icon">⚡</div>
+                        <h3>Fast</h3>
+                        <p>Optimized CSS and minimal JavaScript for snappy interactions.</p>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">🎨</div>
+                        <h3>Beautiful</h3>
+                        <p>Thoughtful spacing, typography, and color system for clarity.</p>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">🔒</div>
+                        <h3>Secure</h3>
+                        <p>Best practices for forms and data handling built in.</p>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">♻️</div>
+                        <h3>Reusable</h3>
+                        <p>Components and utilities that scale with your project.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section alt">
+            <div class="container">
+                <h2 class="section-title">Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="card price-card">
+                        <h3>Starter</h3>
+                        <p class="price">Free</p>
+                        <ul>
+                            <li>Basic components</li>
+                            <li>Community support</li>
+                            <li>1 project</li>
+                        </ul>
+                        <a class="btn primary" href="#">Choose</a>
+                    </div>
+                    <div class="card price-card featured">
+                        <h3>Pro</h3>
+                        <p class="price">₹499 / mo</p>
+                        <ul>
+                            <li>All components</li>
+                            <li>Priority support</li>
+                            <li>Unlimited projects</li>
+                        </ul>
+                        <a class="btn primary" href="#">Get Pro</a>
+                    </div>
+                    <div class="card price-card">
+                        <h3>Enterprise</h3>
+                        <p class="price">Custom</p>
+                        <ul>
+                            <li>Dedicated account</li>
+                            <li>SLAs & onboarding</li>
+                            <li>Custom integrations</li>
+                        </ul>
+                        <a class="btn ghost" href="#">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container contact-grid">
+                <div>
+                    <h2 class="section-title">Get in touch</h2>
+                    <p>Questions about the product or need a demo? Drop a message and we’ll reply within one business
+                        day.</p>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — we will reach out!');">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" required />
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" required />
+                    </label>
+                    <label>
+                        <span>Message</span>
+                        <textarea rows="4" required></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button class="btn primary" type="submit">Send</button>
+                        <button class="btn ghost" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 
-    <!-- Add / Edit Flight Modal -->
-    <div id="flightModal" class="modal hidden">
-        <div class="modal-content">
-            <h2 id="modalTitle">Add Flight</h2>
-            <form id="flightForm">
-                <input type="hidden" id="flightId" />
-                <label>Flight Number<input id="flightNumber" required /></label>
-                <label>Airline<input id="airline" required /></label>
-                <label>From<input id="from" required /></label>
-                <label>To<input id="to" required /></label>
-                <label>Departure Time<input id="departure" type="datetime-local" required /></label>
-                <label>Gate<input id="gate" required /></label>
-                <label>Status
-                    <select id="status">
-                        <option value="scheduled">Scheduled</option>
-                        <option value="boarding">Boarding</option>
-                        <option value="departed">Departed</option>
-                        <option value="cancelled">Cancelled</option>
-                    </select>
-                </label>
-                <div class="form-actions">
-                    <button type="submit">Save</button>
-                    <button type="button" id="cancelModal">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Passenger Modal -->
-    <div id="passengerModal" class="modal hidden">
-        <div class="modal-content">
-            <h2>Passengers for <span id="passFlightLabel"></span></h2>
-            <form id="passengerForm">
-                <input id="passFlightId" type="hidden" />
-                <label>Name<input id="passName" required /></label>
-                <label>Seat<input id="passSeat" required /></label>
-                <div class="form-actions">
-                    <button type="submit">Add Passenger</button>
-                </div>
-            </form>
-
-            <table id="passengerTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Seat</th>
-                        <th>Checked In</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-
-            <div class="form-actions">
-                <button id="closePassengerModal">Close</button>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© <strong>Skyline</strong> 2025</div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script src="./app.js"></script>
 </body>
