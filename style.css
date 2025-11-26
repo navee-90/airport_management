@@ -1,0 +1,232 @@
+:root {
+    --bg: #f4f7fb;
+    --card: #fff;
+    --accent: #0b6efd;
+    --muted: #6b7280;
+    --danger: #ef4444;
+    --success: #10b981;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+    background: var(--bg);
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(90deg, #0b6efd22, #0b6efd11);
+    padding: 18px 0;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px
+}
+
+.container {
+    width: 95%;
+    max-width: var(--max-width);
+    margin: 20px auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.controls input,
+.controls select {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #e6e9ef;
+    min-width: 220px;
+}
+
+.controls button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#flightsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.06);
+}
+
+#flightsTable th,
+#flightsTable td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+}
+
+#flightsTable thead th {
+    background: #fbfdff;
+    font-weight: 600;
+}
+
+.badge {
+    padding: 6px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: #fff
+}
+
+.badge.scheduled {
+    background: #64748b
+}
+
+.badge.boarding {
+    background: #0b6efd
+}
+
+.badge.departed {
+    background: var(--muted)
+}
+
+.badge.cancelled {
+    background: var(--danger)
+}
+
+.actions button {
+    margin-right: 6px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.actions .edit {
+    background: #f59e0b;
+    color: #fff
+}
+
+.actions .delete {
+    background: #ef4444;
+    color: #fff
+}
+
+.actions .pass {
+    background: #10b981;
+    color: #fff
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 6, 23, 0.45);
+    z-index: 50;
+}
+
+.modal.hidden {
+    display: none
+}
+
+.modal-content {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.2);
+}
+
+.modal-content h2 {
+    margin-top: 0
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #e6e9ef;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.form-actions button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+    background: var(--accent);
+    color: #fff
+}
+
+.form-actions button#cancelModal {
+    background: #e6e9ef
+}
+
+#passengerTable {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse
+}
+
+#passengerTable th,
+#passengerTable td {
+    padding: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px
+}
+
+@media (max-width:720px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .controls .left {
+        display: flex;
+        gap: 8px
+    }
+
+    #flightsTable th:nth-child(2),
+    #flightsTable td:nth-child(2) {
+        display: none
+    }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Airport Management System</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Airport Management System</h1>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <div class="left">
+                <input id="searchInput" type="search" placeholder="Search flight number or destination" />
+                <select id="statusFilter">
+                    <option value="all">All statuses</option>
+                    <option value="scheduled">Scheduled</option>
+                    <option value="boarding">Boarding</option>
+                    <option value="departed">Departed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+
+            <div class="right">
+                <button id="openAddForm">Add Flight</button>
+            </div>
+        </section>
+
+        <section id="flightsSection">
+            <table id="flightsTable">
+                <thead>
+                    <tr>
+                        <th>Flight</th>
+                        <th>Airline</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Departure</th>
+                        <th>Gate</th>
+                        <th>Status</th>
+                        <th>Passengers</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Add / Edit Flight Modal -->
+    <div id="flightModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add Flight</h2>
+            <form id="flightForm">
+                <input type="hidden" id="flightId" />
+                <label>Flight Number<input id="flightNumber" required /></label>
+                <label>Airline<input id="airline" required /></label>
+                <label>From<input id="from" required /></label>
+                <label>To<input id="to" required /></label>
+                <label>Departure Time<input id="departure" type="datetime-local" required /></label>
+                <label>Gate<input id="gate" required /></label>
+                <label>Status
+                    <select id="status">
+                        <option value="scheduled">Scheduled</option>
+                        <option value="boarding">Boarding</option>
+                        <option value="departed">Departed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </label>
+                <div class="form-actions">
+                    <button type="submit">Save</button>
+                    <button type="button" id="cancelModal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Passenger Modal -->
+    <div id="passengerModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Passengers for <span id="passFlightLabel"></span></h2>
+            <form id="passengerForm">
+                <input id="passFlightId" type="hidden" />
+                <label>Name<input id="passName" required /></label>
+                <label>Seat<input id="passSeat" required /></label>
+                <div class="form-actions">
+                    <button type="submit">Add Passenger</button>
+                </div>
+            </form>
+
+            <table id="passengerTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Seat</th>
+                        <th>Checked In</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="form-actions">
+                <button id="closePassengerModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
